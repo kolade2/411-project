@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -263,6 +264,18 @@ public class HomePage extends javax.swing.JFrame {
         displayPanel.setBackground(new java.awt.Color(255, 255, 255));
         displayPanel.setLayout(new java.awt.CardLayout());
 
+        menuTabs.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuTabsMouseClicked(evt);
+            }
+        });
+
+        menuPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuPanel1MouseClicked(evt);
+            }
+        });
+
         menuTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -314,6 +327,12 @@ public class HomePage extends javax.swing.JFrame {
 
         menuTabs.addTab("Full Menu", menuPanel1);
 
+        menuPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuPanel2MouseClicked(evt);
+            }
+        });
+
         menuTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -364,6 +383,12 @@ public class HomePage extends javax.swing.JFrame {
         );
 
         menuTabs.addTab("Appetizer", menuPanel2);
+
+        menuPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuPanel3MouseClicked(evt);
+            }
+        });
 
         menuTable3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -878,20 +903,6 @@ public class HomePage extends javax.swing.JFrame {
                 Object table1[] = {rs.getInt("Menu_ID"),rs.getString("Item_name"), rs.getDouble("Price"), rs.getString("Category")};
                 menuTableModel.addRow(table1);
 
-//                String menu_id = String.valueOf(rs.getInt("Menu_ID"));
-//                String item_name = rs.getString("Item_name");
-//                String price = String.valueOf(rs.getDouble("Price"));
-//                String category = rs.getString("Category");
-                
-                
-                //store data in array
-//                String menuTableData[] = {menu_id,item_name,price,category};
-                    
-                
-                
-                    //add string array data to table
-//                    menuTableModel.addRow(menuTableData);
-                
             }
         }
         catch (Exception e){
@@ -992,6 +1003,108 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_editMenuIDActionPerformed
 
+    private void menuTabsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTabsMouseClicked
+        // TODO add your handling code here:
+        //        int menuchoice = 1;
+//        switch(menuchoice){
+//            case 1:
+//                menuTabsMouseClicked(menuPanel1);
+//                extension = "";
+//                table =menuTable1;
+//                menuTabs.setSelectedIndex(0);
+//                break;
+//            case 2:
+//                menuTabsMouseClicked(menuPanel2);
+//                extension = " where Category='Appetizer'";
+//                table =menuTable2;
+//                menuTabs.setSelectedIndex(1);
+//                break;
+// 
+//            case 3:
+//                menuTabsMouseClicked(menuPanel3);
+//                extension = " where Category='Main'";
+//                table =menuTable3;
+//                menuTabs.setSelectedIndex(2);
+//                break;
+//            case 4:
+//                menuTabsMouseClicked(menuPanel4);
+//                extension = " where Category='Dessert'";
+//                table =menuTable4;
+//                menuTabs.setSelectedIndex(3);
+//                break;
+//            case 5:
+//                menuTabsMouseClicked(menuPanel5);
+//                extension = " where Category='Beverages'";
+//                table =menuTable5;
+//       }
+        displayPanel.removeAll();
+        displayPanel.repaint();
+        displayPanel.revalidate();
+        
+        displayPanel.add(menuTabs);
+        displayPanel.repaint();
+        displayPanel.revalidate();
+        var extension = "";
+        var table = menuTable1;
+        int tab = 0;
+        if (menuTabsMouseClicked(menuPanel1)){
+            extension = "";
+            table =menuTable1;
+            menuTabs.setSelectedComponent(menuPanel1);
+        }if(menuTabsMouseClicked(menuPanel2)){
+            extension = " where Category='Appetizer'";
+            table =menuTable2;
+            menuTabs.setSelectedComponent(menuPanel2);
+        }if(menuTabsMouseClicked(menuPanel3)){
+            extension = " where Category='Main'";
+            table =menuTable3;
+            menuTabs.setSelectedComponent(menuPanel3);
+        }if(menuTabsMouseClicked(menuPanel4)){
+            extension = " where Category='Dessert'";
+            table =menuTable4;
+            menuTabs.setSelectedComponent(menuPanel4);
+        }if(menuTabsMouseClicked(menuPanel5)){
+            extension = " where Category='Beverage'";
+            table =menuTable5;
+            menuTabs.setSelectedComponent(menuPanel5);
+        }
+//        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo?", "root", "");
+            Statement stmt = conn.createStatement();
+            
+            ResultSet rs=stmt.executeQuery("Select * from menulist" + extension);
+            DefaultTableModel menuTableModel = (DefaultTableModel)table.getModel();
+            menuTableModel.setRowCount(0);
+            
+            
+            while(rs.next()){
+                //data will be added until the the bottom of the table is reached
+                Object table1[] = {rs.getInt("Menu_ID"),rs.getString("Item_name"), rs.getDouble("Price"), rs.getString("Category")};
+                menuTableModel.addRow(table1);
+            }
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+
+    }//GEN-LAST:event_menuTabsMouseClicked
+
+    private void menuPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPanel3MouseClicked
+
+
+    }//GEN-LAST:event_menuPanel3MouseClicked
+
+    private void menuPanel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPanel1MouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_menuPanel1MouseClicked
+
+    private void menuPanel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPanel2MouseClicked
+     
+    }//GEN-LAST:event_menuPanel2MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1090,4 +1203,8 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton show_orders_btn;
     private javax.swing.JButton show_orders_btn1;
     // End of variables declaration//GEN-END:variables
+
+    private Boolean menuTabsMouseClicked(JPanel menuPanel2) {
+        return true;
+    }
 }
