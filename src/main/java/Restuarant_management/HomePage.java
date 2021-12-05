@@ -25,7 +25,8 @@ public class HomePage extends javax.swing.JFrame {
      */
     public HomePage() {
         initComponents();
-        setSize(800,900);
+        setSize(800,600);
+        setLocation(300,150);
     }
 
     /**
@@ -43,12 +44,13 @@ public class HomePage extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         show_menu_btn = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        logoutBtn = new javax.swing.JButton();
         make_order_btn = new javax.swing.JButton();
         show_orders_btn = new javax.swing.JButton();
-        show_orders_btn1 = new javax.swing.JButton();
+        show_inventory_btn = new javax.swing.JButton();
         displayPanel = new javax.swing.JPanel();
         addItemPanel = new javax.swing.JPanel();
         addMenuID1 = new javax.swing.JTextField();
@@ -95,6 +97,12 @@ public class HomePage extends javax.swing.JFrame {
         editingTitlePanel = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         editBtn = new javax.swing.JButton();
+        showInventoryPanel = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        addingTitlePanel2 = new javax.swing.JPanel();
+        jLabel20 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        showInventoryTable = new javax.swing.JTable();
         rmsTitlePanel = new javax.swing.JPanel();
         rmsTitleLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -152,6 +160,17 @@ public class HomePage extends javax.swing.JFrame {
 
         jTextField1.setText("jTextField1");
 
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setLocationByPlatform(true);
@@ -171,12 +190,12 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setForeground(new java.awt.Color(0, 102, 0));
-        jButton5.setText("Logout");
-        jButton5.setPreferredSize(new java.awt.Dimension(50, 29));
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        logoutBtn.setForeground(new java.awt.Color(0, 102, 0));
+        logoutBtn.setText("Logout");
+        logoutBtn.setPreferredSize(new java.awt.Dimension(50, 29));
+        logoutBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                logoutBtnActionPerformed(evt);
             }
         });
 
@@ -196,11 +215,11 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
-        show_orders_btn1.setForeground(new java.awt.Color(0, 102, 0));
-        show_orders_btn1.setText("Show inventory");
-        show_orders_btn1.addActionListener(new java.awt.event.ActionListener() {
+        show_inventory_btn.setForeground(new java.awt.Color(0, 102, 0));
+        show_inventory_btn.setText("Show inventory");
+        show_inventory_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                show_orders_btn1ActionPerformed(evt);
+                show_inventory_btnActionPerformed(evt);
             }
         });
 
@@ -211,11 +230,11 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(show_orders_btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(show_inventory_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(show_menu_btn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(make_order_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(show_orders_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(logoutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -228,9 +247,9 @@ public class HomePage extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(show_orders_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(show_orders_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(show_inventory_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(159, 159, 159)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -466,7 +485,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanel1Layout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
+                .addContainerGap(73, Short.MAX_VALUE)
                 .addComponent(add_item_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(edit_item_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -533,14 +552,15 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel2Layout.setHorizontalGroup(
             menuPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel2Layout.setVerticalGroup(
             menuPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         menuTabs.addTab("Appetizer", menuPanel2);
@@ -590,7 +610,7 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel3Layout.setHorizontalGroup(
             menuPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel3Layout.setVerticalGroup(
@@ -641,7 +661,7 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel4Layout.setHorizontalGroup(
             menuPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel4Layout.setVerticalGroup(
@@ -692,7 +712,7 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel5Layout.setHorizontalGroup(
             menuPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel5Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel5Layout.setVerticalGroup(
@@ -840,6 +860,95 @@ public class HomePage extends javax.swing.JFrame {
 
         displayPanel.add(editItemPanel, "card3");
 
+        showInventoryPanel.setBackground(new java.awt.Color(255, 255, 255));
+        showInventoryPanel.setMaximumSize(new java.awt.Dimension(600, 500));
+        showInventoryPanel.setMinimumSize(new java.awt.Dimension(450, 400));
+        showInventoryPanel.setPreferredSize(new java.awt.Dimension(600, 500));
+
+        addingTitlePanel2.setBackground(new java.awt.Color(255, 255, 255));
+        addingTitlePanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 78, 34), 2));
+
+        jLabel20.setFont(new java.awt.Font("New Peninim MT", 1, 24)); // NOI18N
+        jLabel20.setForeground(new java.awt.Color(0, 78, 34));
+        jLabel20.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel20.setText("Inventory");
+
+        javax.swing.GroupLayout addingTitlePanel2Layout = new javax.swing.GroupLayout(addingTitlePanel2);
+        addingTitlePanel2.setLayout(addingTitlePanel2Layout);
+        addingTitlePanel2Layout.setHorizontalGroup(
+            addingTitlePanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addingTitlePanel2Layout.createSequentialGroup()
+                .addContainerGap(195, Short.MAX_VALUE)
+                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(198, 198, 198))
+        );
+        addingTitlePanel2Layout.setVerticalGroup(
+            addingTitlePanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addingTitlePanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel20)
+                .addGap(17, 17, 17))
+        );
+
+        showInventoryTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Menu_ID", "Item_name", "Price", "Category"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane6.setViewportView(showInventoryTable);
+        if (showInventoryTable.getColumnModel().getColumnCount() > 0) {
+            showInventoryTable.getColumnModel().getColumn(0).setResizable(false);
+            showInventoryTable.getColumnModel().getColumn(1).setResizable(false);
+            showInventoryTable.getColumnModel().getColumn(2).setResizable(false);
+            showInventoryTable.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout showInventoryPanelLayout = new javax.swing.GroupLayout(showInventoryPanel);
+        showInventoryPanel.setLayout(showInventoryPanelLayout);
+        showInventoryPanelLayout.setHorizontalGroup(
+            showInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(showInventoryPanelLayout.createSequentialGroup()
+                .addGroup(showInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(showInventoryPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(addingTitlePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(showInventoryPanelLayout.createSequentialGroup()
+                        .addGap(235, 235, 235)
+                        .addComponent(jLabel17)
+                        .addGap(0, 360, Short.MAX_VALUE))
+                    .addGroup(showInventoryPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane6)))
+                .addContainerGap())
+        );
+        showInventoryPanelLayout.setVerticalGroup(
+            showInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(showInventoryPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(addingTitlePanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        displayPanel.add(showInventoryPanel, "card4");
+
         rmsTitlePanel.setBackground(new java.awt.Color(94, 141, 103));
         rmsTitlePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 78, 34), 2));
 
@@ -968,8 +1077,9 @@ public class HomePage extends javax.swing.JFrame {
         displayPanel.revalidate();
     }//GEN-LAST:event_edit_item_btnActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
         // TODO add your handling code here:
+        this.dispose();
         RestuarantManagement w=new RestuarantManagement();
         w.setVisible(true);
         w.pack();
@@ -977,7 +1087,7 @@ public class HomePage extends javax.swing.JFrame {
         w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         //should close homepage on logout -figure out with maria
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_logoutBtnActionPerformed
 
     private void delete_item_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_item_btnActionPerformed
         // TODO add your handling code here:
@@ -991,9 +1101,39 @@ public class HomePage extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_show_orders_btnActionPerformed
 
-    private void show_orders_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_orders_btn1ActionPerformed
+    private void show_inventory_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_inventory_btnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_show_orders_btn1ActionPerformed
+        //display all items in database
+        displayPanel.removeAll();
+        displayPanel.repaint();
+        displayPanel.revalidate();
+        
+        displayPanel.add(showInventoryPanel);
+        displayPanel.repaint();
+        displayPanel.revalidate();
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo?", "root", "");
+            Statement stmt = conn.createStatement();
+            
+ 
+            ResultSet rs=stmt.executeQuery("Select * from menulist");
+            DefaultTableModel menuTableModel = (DefaultTableModel)showInventoryTable.getModel();
+            menuTableModel.setRowCount(0);
+            
+            while(rs.next()){
+                //data will be added until the the bottom of the table is reached
+                Object table1[] = {rs.getInt("Menu_ID"),rs.getString("Item_name"), rs.getDouble("Price"), rs.getString("Category")};
+                menuTableModel.addRow(table1);
+
+            }
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+    }//GEN-LAST:event_show_inventory_btnActionPerformed
 
     private void addMenuID1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addMenuID1ActionPerformed
         // TODO add your handling code here:
@@ -1204,6 +1344,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTextField addPrice1;
     private javax.swing.JButton add_item_btn;
     private javax.swing.JPanel addingTitlePanel1;
+    private javax.swing.JPanel addingTitlePanel2;
     private javax.swing.JButton delete_item_btn;
     private javax.swing.JPanel displayPanel;
     private javax.swing.JButton editBtn;
@@ -1216,7 +1357,6 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JButton edit_item_btn;
     private javax.swing.JPanel editingTitlePanel;
     private javax.swing.JPanel food_inventory_panel;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1224,7 +1364,9 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -1234,12 +1376,15 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JButton logoutBtn;
     private javax.swing.JButton make_order_btn;
     private javax.swing.JPanel menuPanel1;
     private javax.swing.JPanel menuPanel2;
@@ -1255,9 +1400,11 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel rightIcon;
     private javax.swing.JLabel rmsTitleLabel;
     private javax.swing.JPanel rmsTitlePanel;
+    private javax.swing.JPanel showInventoryPanel;
+    private javax.swing.JTable showInventoryTable;
+    private javax.swing.JButton show_inventory_btn;
     private javax.swing.JButton show_menu_btn;
     private javax.swing.JButton show_orders_btn;
-    private javax.swing.JButton show_orders_btn1;
     // End of variables declaration//GEN-END:variables
 
     private Boolean menuTabsMouseClicked(JPanel menuPanel2) {

@@ -19,7 +19,8 @@ public class RestuarantManagement extends javax.swing.JFrame {
      */
     public RestuarantManagement() {
         initComponents();
-        setSize(700,400);
+        setSize(800,600);
+        setLocation(300,150);
         //centering the screen
 //        Toolkit tool = Toolkit.getDefaultToolkit();
 //        Dimension dim= new Dimension(tool.getScreenSize());
@@ -168,12 +169,13 @@ public class RestuarantManagement extends javax.swing.JFrame {
             ResultSet rs=stmt.executeQuery("Select * from userdetail where username='"+user+"' and password='"+pass+"'");
             if (rs.next()){
                 JOptionPane.showMessageDialog(null, "Welcome user");
+                this.dispose();
                 HomePage w=new HomePage();
                 w.setVisible(true);
                 w.pack();
                 w.setLocation(null);
                 w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                System.exit(0);
+               
             }
             else{
                 JOptionPane.showMessageDialog(null, "invalid username or password", "Access Denied", JOptionPane.ERROR_MESSAGE);
@@ -182,7 +184,7 @@ public class RestuarantManagement extends javax.swing.JFrame {
             }
         }
         catch (Exception e){
-            JOptionPane.showMessageDialog(null, e);
+//            JOptionPane.showMessageDialog(null, e);
         }
 
     }//GEN-LAST:event_jButton1ActionPerformed
