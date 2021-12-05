@@ -48,6 +48,8 @@ public class RestuarantManagement extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setSize(new java.awt.Dimension(800, 600));
 
         jPanel1.setBackground(new java.awt.Color(0, 78, 34));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
@@ -171,6 +173,7 @@ public class RestuarantManagement extends javax.swing.JFrame {
                 w.pack();
                 w.setLocation(null);
                 w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                System.exit(0);
             }
             else{
                 JOptionPane.showMessageDialog(null, "invalid username or password", "Access Denied", JOptionPane.ERROR_MESSAGE);
