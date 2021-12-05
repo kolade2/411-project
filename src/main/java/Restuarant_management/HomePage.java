@@ -12,6 +12,7 @@ import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -438,6 +439,11 @@ public class HomePage extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        menuTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuTable1MouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(menuTable1);
@@ -1075,6 +1081,7 @@ public class HomePage extends javax.swing.JFrame {
         displayPanel.add(editItemPanel);
         displayPanel.repaint();
         displayPanel.revalidate();
+       
     }//GEN-LAST:event_edit_item_btnActionPerformed
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
@@ -1172,6 +1179,60 @@ public class HomePage extends javax.swing.JFrame {
 
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
         // TODO add your handling code here:
+        String menu_id = null;
+        String item_name = null;
+        String price = null;
+        String category = null;
+        DefaultTableModel tblModel = (DefaultTableModel)menuTable1.getModel();
+        if (menuTable1.getSelectedRowCount() == 1){
+            //if single row is selected store the values in variables
+            menu_id = editMenuID.getText();
+            item_name = editItemName.getText();
+            price = editPrice.getText();
+            category = editCategory.getText();
+            
+            
+            //set updated value on table row
+            tblModel.setValueAt(menu_id, menuTable1.getSelectedRow(), 0);
+            tblModel.setValueAt(item_name, menuTable1.getSelectedRow(), 1);
+            tblModel.setValueAt(price, menuTable1.getSelectedRow(), 2);
+            tblModel.setValueAt(category, menuTable1.getSelectedRow(), 3);
+            
+            
+            
+        }else{
+            if (menuTable1.getRowCount()== 0){
+                JOptionPane.showMessageDialog(this, "Table is Empty");
+
+            }else{
+                JOptionPane.showMessageDialog(this, "Please select a single row for update...");
+            }
+        }
+        Connection conn=null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo","root","");
+            PreparedStatement rs = conn.prepareStatement("UPDATE menulist SET Menu_ID=?,Item_name=?, Price=?, Category=? WHERE Menu_ID='"+menu_id+"'");
+     
+            rs.setString(1, editMenuID.getText());
+            rs.setString(2, editItemName.getText());
+            rs.setString(3, editPrice.getText());
+            rs.setString(4, editCategory.getText());
+            
+            
+            rs.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Item updated");
+  
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+      
+        }
+        
+        
+        
+       
+             
     }//GEN-LAST:event_editBtnActionPerformed
 
     private void editItemNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editItemNameActionPerformed
@@ -1299,6 +1360,23 @@ public class HomePage extends javax.swing.JFrame {
     private void addCategory1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCategory1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_addCategory1ActionPerformed
+
+    private void menuTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTable1MouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel tblmodel = (DefaultTableModel)menuTable1.getModel();
+        
+        
+        String Menu_id = tblmodel.getValueAt(menuTable1.getSelectedRow(), 0).toString();
+        String Item_name = tblmodel.getValueAt(menuTable1.getSelectedRow(), 1).toString();
+        String Price = tblmodel.getValueAt(menuTable1.getSelectedRow(), 2).toString();
+        String Category = tblmodel.getValueAt(menuTable1.getSelectedRow(), 3).toString();
+        
+        editMenuID.setText(Menu_id);
+        editItemName.setText(Item_name);
+        editPrice.setText(Price);
+        editCategory.setText(Category);
+
+    }//GEN-LAST:event_menuTable1MouseClicked
 
     /**
      * @param args the command line arguments
