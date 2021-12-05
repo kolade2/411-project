@@ -904,7 +904,7 @@ public class HomePage extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Menu_ID", "Item_name", "Price", "Category"
+                "item_id", "name", "quantity", "price"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -978,9 +978,9 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(rmsTitlePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addGap(39, 39, 39)
+                .addGap(27, 27, 27)
                 .addComponent(rmsTitleLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(rightIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1125,13 +1125,13 @@ public class HomePage extends javax.swing.JFrame {
             Statement stmt = conn.createStatement();
             
  
-            ResultSet rs=stmt.executeQuery("Select * from menulist");
+            ResultSet rs=stmt.executeQuery("Select * from inventorylist");
             DefaultTableModel menuTableModel = (DefaultTableModel)showInventoryTable.getModel();
             menuTableModel.setRowCount(0);
             
             while(rs.next()){
                 //data will be added until the the bottom of the table is reached
-                Object table1[] = {rs.getInt("Menu_ID"),rs.getString("Item_name"), rs.getDouble("Price"), rs.getString("Category")};
+                Object table1[] = {rs.getInt("item_id"),rs.getString("name"), rs.getInt("quantity"), rs.getDouble("price")};
                 menuTableModel.addRow(table1);
 
             }
