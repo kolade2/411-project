@@ -6,6 +6,7 @@ package Restuarant_management;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import javax.swing.JFrame;
@@ -41,6 +42,7 @@ public class HomePage extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jTextField1 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         show_menu_btn = new javax.swing.JButton();
         add_item_btn = new javax.swing.JButton();
@@ -147,6 +149,8 @@ public class HomePage extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 100, Short.MAX_VALUE)
         );
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -703,6 +707,7 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        addItemName1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         addItemName1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addItemName1ActionPerformed(evt);
@@ -759,18 +764,18 @@ public class HomePage extends javax.swing.JFrame {
                                     .addComponent(jLabel11)
                                     .addComponent(addItemName1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(addItemPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(35, 35, 35)
-                                .addComponent(addMenuID1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(addItemPanelLayout.createSequentialGroup()
                                 .addGroup(addItemPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel14)
                                     .addComponent(jLabel12))
                                 .addGap(31, 31, 31)
                                 .addGroup(addItemPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(addPrice1)
-                                    .addComponent(addCategory1, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE))))
-                        .addGap(0, 307, Short.MAX_VALUE)))
+                                    .addComponent(addCategory1, javax.swing.GroupLayout.DEFAULT_SIZE, 83, Short.MAX_VALUE)))
+                            .addGroup(addItemPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addGap(35, 35, 35)
+                                .addComponent(addMenuID1, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(addItemPanelLayout.createSequentialGroup()
                 .addGap(162, 162, 162)
@@ -981,6 +986,33 @@ public class HomePage extends javax.swing.JFrame {
 
     private void addItemBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemBtn1ActionPerformed
         // TODO add your handling code here:
+//        var add_menu_id=addMenuID1.getText();
+//        var add_item_name=addItemName1.getText();
+//        var add_price = addPrice1.getText();
+//        var add_category = addCategory1.getText();
+        
+        
+        Connection conn=null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo","root","");
+            PreparedStatement rs = conn.prepareStatement("Insert into menulist(Menu_ID,Item_name,Price,Category)values(?,?,?,?)");
+            
+//            Statement stmt = conn.createStatement();
+//            ResultSet rs=stmt.executeQuery("Insert into menulist(Menu_ID,Item_name,Price,Category)");
+            rs.setString(1, addMenuID1.getText());
+            rs.setString(2, addItemName1.getText());
+            rs.setString(3, addPrice1.getText());
+            rs.setString(4, addCategory1.getText());
+            
+            rs.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Item added");
+  
+            
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+      
+        }
     }//GEN-LAST:event_addItemBtn1ActionPerformed
 
     private void editBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editBtnActionPerformed
@@ -1044,31 +1076,35 @@ public class HomePage extends javax.swing.JFrame {
         displayPanel.add(menuTabs);
         displayPanel.repaint();
         displayPanel.revalidate();
+        
         var extension = "";
         var table = menuTable1;
-        int tab = 0;
         if (menuTabsMouseClicked(menuPanel1)){
             extension = "";
             table =menuTable1;
             menuTabs.setSelectedComponent(menuPanel1);
+            
         }if(menuTabsMouseClicked(menuPanel2)){
             extension = " where Category='Appetizer'";
             table =menuTable2;
             menuTabs.setSelectedComponent(menuPanel2);
-        }if(menuTabsMouseClicked(menuPanel3)){
+            
+        }if (menuTabsMouseClicked(menuPanel3)){
             extension = " where Category='Main'";
             table =menuTable3;
             menuTabs.setSelectedComponent(menuPanel3);
+            
         }if(menuTabsMouseClicked(menuPanel4)){
             extension = " where Category='Dessert'";
             table =menuTable4;
             menuTabs.setSelectedComponent(menuPanel4);
+            
         }if(menuTabsMouseClicked(menuPanel5)){
             extension = " where Category='Beverage'";
             table =menuTable5;
             menuTabs.setSelectedComponent(menuPanel5);
         }
-//        
+      
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo?", "root", "");
@@ -1184,6 +1220,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton make_order_btn;
     private javax.swing.JPanel menuPanel1;
     private javax.swing.JPanel menuPanel2;
