@@ -21,13 +21,7 @@ public class RestuarantManagement extends javax.swing.JFrame {
         initComponents();
         setSize(800,600);
         setLocation(300,150);
-        //centering the screen
-//        Toolkit tool = Toolkit.getDefaultToolkit();
-//        Dimension dim= new Dimension(tool.getScreenSize());
-//        int height = (int) dim.getHeight();
-//        int width = (int) dim.getWidth();
-//        setSize(width, height);
-//        setLocation(width/2 - getWidth() / 2, height/2 - getHeight() / 2);
+
     }
 
     /**
@@ -173,8 +167,9 @@ public class RestuarantManagement extends javax.swing.JFrame {
                 HomePage w=new HomePage();
                 w.setVisible(true);
                 w.pack();
-                w.setLocation(null);
                 w.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+          
+               
                
             }
             else{
