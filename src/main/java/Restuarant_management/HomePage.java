@@ -1098,6 +1098,54 @@ public class HomePage extends javax.swing.JFrame {
 
     private void delete_item_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_delete_item_btnActionPerformed
         // TODO add your handling code here:
+        String[] options={"Yes", "No"};
+        String menu_id = null;
+        Connection conn=null;
+        int answ=JOptionPane.showOptionDialog(null, "Are you sure you want to delete this item", "Delete confirm", JOptionPane.YES_NO_CANCEL_OPTION, JOptionPane.QUESTION_MESSAGE, null, options, options[1]);
+        
+        if (answ==0){
+            try{
+            Class.forName("com.mysql.jdbc.Driver");
+            conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo","root","");
+            PreparedStatement rs = conn.prepareStatement("DELETE from menulist WHERE Menu_ID=?");
+     
+            rs.setString(1, editMenuID.getText());
+            
+            rs.executeUpdate();
+            JOptionPane.showMessageDialog(this, "Item deleted");
+            displayPanel.removeAll();
+            displayPanel.repaint();
+            displayPanel.revalidate();
+        
+            displayPanel.add(menuTabs);
+            displayPanel.repaint();
+            displayPanel.revalidate();
+            
+            }catch(Exception e){
+                JOptionPane.showMessageDialog(null, e);
+      
+            }
+        }else{
+            JOptionPane.showMessageDialog(null, "item not deleted");
+        }
+       
+//        DefaultTableModel tblModel = (DefaultTableModel)menuTable1.getModel();
+//        if (menuTable1.getSelectedRowCount() == 1){
+//            //if single row is selected store the values in variables
+//            menu_id = editMenuID.getText();
+//           
+//            //set updated value on table row
+//            tblModel.setValueAt(menu_id, menuTable1.getSelectedRow(), 0);
+//       
+//        }else{
+//            if (menuTable1.getRowCount()== 0){
+//                JOptionPane.showMessageDialog(this, "Table is Empty");
+//
+//            }else{
+//                JOptionPane.showMessageDialog(this, "Please select a single row for update...");
+//            }
+//        }
+       
     }//GEN-LAST:event_delete_item_btnActionPerformed
 
     private void make_order_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_make_order_btnActionPerformed
@@ -1197,8 +1245,7 @@ public class HomePage extends javax.swing.JFrame {
             tblModel.setValueAt(item_name, menuTable1.getSelectedRow(), 1);
             tblModel.setValueAt(price, menuTable1.getSelectedRow(), 2);
             tblModel.setValueAt(category, menuTable1.getSelectedRow(), 3);
-            
-            
+           
             
         }else{
             if (menuTable1.getRowCount()== 0){
