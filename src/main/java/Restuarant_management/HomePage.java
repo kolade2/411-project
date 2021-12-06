@@ -1617,27 +1617,27 @@ public class HomePage extends javax.swing.JFrame {
         
         var extension = "";
         var table = menuTable1;
-        if (menuTabsMouseClicked(menuPanel1)){
+        if (menuTabs.getSelectedIndex() == 0){
             extension = "";
             table =menuTable1;
-
             
-        }else if(menuTabsMouseClicked(menuPanel2)){
+             
+        }else if(menuTabs.getSelectedIndex() == 1){
             extension = " where Category='Appetizer'";
             table =menuTable2;
 
             
-        }else if (menuTabsMouseClicked(menuPanel3)){
+        }else if (menuTabs.getSelectedIndex() == 2){
             extension = " where Category='Main'";
             table =menuTable3;
 
             
-        }else if(menuTabsMouseClicked(menuPanel4)){
+        }else if(menuTabs.getSelectedIndex() == 3){
             extension = " where Category='Dessert'";
             table =menuTable4;
           
             
-        }else if(menuTabsMouseClicked(menuPanel5)){
+        }else if(menuTabs.getSelectedIndex() == 4){
             extension = " where Category='Beverage'";
             table =menuTable5;
           
