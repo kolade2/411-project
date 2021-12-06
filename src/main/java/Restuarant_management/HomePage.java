@@ -1244,20 +1244,19 @@ public class HomePage extends javax.swing.JFrame {
             rs.setString(3, editPrice.getText());
             rs.setString(4, editCategory.getText());
             
-            
             rs.executeUpdate();
             JOptionPane.showMessageDialog(this, "Item updated");
-  
+           
+            editMenuID.setText("");
+            editItemName.setText("");
+            editPrice.setText("");
+            editCategory.setText("");
             
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
       
         }
-        
-        
-        
-       
-             
+     
     }//GEN-LAST:event_editBtnActionPerformed
 
     private void editItemNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editItemNameActionPerformed
