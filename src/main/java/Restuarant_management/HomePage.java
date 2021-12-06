@@ -118,6 +118,8 @@ public class HomePage extends javax.swing.JFrame {
         noTxtField = new javax.swing.JTextField();
         noLabel = new javax.swing.JLabel();
         show_orders_btn = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        orderTextArea = new javax.swing.JTextArea();
         showOrderPanel = new javax.swing.JPanel();
         showOrderTitle = new javax.swing.JPanel();
         showOrderLabel = new javax.swing.JLabel();
@@ -499,7 +501,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanel1Layout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addComponent(add_item_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(edit_item_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -567,14 +569,14 @@ public class HomePage extends javax.swing.JFrame {
             menuPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel2Layout.setVerticalGroup(
             menuPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 19, Short.MAX_VALUE))
         );
 
         menuTabs.addTab("Appetizer", menuPanel2);
@@ -624,7 +626,7 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel3Layout.setHorizontalGroup(
             menuPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel3Layout.setVerticalGroup(
@@ -675,7 +677,7 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel4Layout.setHorizontalGroup(
             menuPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel4Layout.setVerticalGroup(
@@ -726,7 +728,7 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel5Layout.setHorizontalGroup(
             menuPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel5Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel5Layout.setVerticalGroup(
@@ -1054,6 +1056,10 @@ public class HomePage extends javax.swing.JFrame {
             }
         });
 
+        orderTextArea.setColumns(20);
+        orderTextArea.setRows(5);
+        jScrollPane7.setViewportView(orderTextArea);
+
         javax.swing.GroupLayout makeOrderPanelLayout = new javax.swing.GroupLayout(makeOrderPanel);
         makeOrderPanel.setLayout(makeOrderPanelLayout);
         makeOrderPanelLayout.setHorizontalGroup(
@@ -1070,9 +1076,8 @@ public class HomePage extends javax.swing.JFrame {
                             .addComponent(makeOrderTitlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeOrderPanelLayout.createSequentialGroup()
                                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(57, 57, 57)
-                                .addComponent(show_orders_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
-                                .addGap(43, 43, 43))))
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane7))))
                     .addGroup(makeOrderPanelLayout.createSequentialGroup()
                         .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(makeOrderPanelLayout.createSequentialGroup()
@@ -1092,7 +1097,9 @@ public class HomePage extends javax.swing.JFrame {
                                 .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addComponent(noTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
                                     .addComponent(quantityTxtField))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(118, 118, 118)
+                        .addComponent(show_orders_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 196, Short.MAX_VALUE)
+                        .addGap(46, 46, 46)))
                 .addContainerGap())
         );
         makeOrderPanelLayout.setVerticalGroup(
@@ -1102,26 +1109,29 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(makeOrderTitlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(menuListLabel)
-                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(makeOrderPanelLayout.createSequentialGroup()
-                        .addGap(5, 5, 5)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(makeOrderPanelLayout.createSequentialGroup()
-                        .addGap(139, 139, 139)
-                        .addComponent(show_orders_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(5, 5, 5)
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane7)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 283, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(noTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(noLabel))
-                .addGap(1, 1, 1)
-                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(quantityLabel)
-                    .addComponent(quantityTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(deleteItemOrderBtn)
-                    .addComponent(addItemOrderBtn))
-                .addContainerGap(47, Short.MAX_VALUE))
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(makeOrderPanelLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(quantityLabel)
+                            .addComponent(quantityTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(deleteItemOrderBtn)
+                            .addComponent(addItemOrderBtn))
+                        .addContainerGap(47, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeOrderPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(show_orders_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(57, 57, 57))))
         );
 
         displayPanel.add(makeOrderPanel, "card6");
@@ -1708,29 +1718,41 @@ public class HomePage extends javax.swing.JFrame {
 
     private void addItemOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemOrderBtnActionPerformed
 
-        String no = null;
+        int no = 0;
         String item_name = null;
-        String quantity = null;
-        String price = null;
+        int quantity = 0;
+        Double price = 0.0;
         int index = menuListPanel.getSelectedRow();
         
         TableModel model1 = menuListPanel.getModel();
-    
-        no = noTxtField.getText();
+     
+        no = Integer.valueOf(noTxtField.getText());
         item_name = model1.getValueAt(index, 1).toString();
-        quantity = quantityTxtField.getText();
-        price = model1.getValueAt(index, 2).toString();
+        quantity = Integer.valueOf(quantityTxtField.getText());
+        price = (Double) model1.getValueAt(index, 2);
+        
         
         try{
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo?", "root", "");
             PreparedStatement rs=conn.prepareStatement("Insert into orderlist (No,Item_name,Quantity,Price)values(?,?,?,?)");
-            rs.setString(1, no);
+            rs.setInt(1, no);
             rs.setString(2, item_name);
-            rs.setString(3, quantity);
-            rs.setString(4, price);
+            rs.setInt(3, quantity);
+            rs.setDouble(4, price);
             rs.executeUpdate();
             JOptionPane.showMessageDialog(this, "Order added, click show orders to view updated orders!");
+            orderTextArea.append("\tRestaurant Management System:\n" +
+                "\tOrders:\t\t\t" +
+                "\n=====================\n" +
+                       "Customer: " + no + " ordered: " + "\n" +  
+                "{ CustId: " + no + ", " + "\n" +
+                "Item name: "+item_name + "," + "\n" + 
+                "Quantity: " + quantity + ", " + "\n" +
+                "Price: $" + (quantity * price) + " }\n" +
+                "======================" + "\n" + 
+                "\n\t\t ");
+     
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
@@ -1856,6 +1878,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextField1;
@@ -1878,6 +1901,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTabbedPane menuTabs;
     private javax.swing.JLabel noLabel;
     private javax.swing.JTextField noTxtField;
+    private javax.swing.JTextArea orderTextArea;
     private javax.swing.JTable ordersPanel;
     private javax.swing.JLabel quantityLabel;
     private javax.swing.JTextField quantityTxtField;
