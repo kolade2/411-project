@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -104,6 +105,29 @@ public class HomePage extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         showInventoryTable = new javax.swing.JTable();
+        makeOrderPanel = new javax.swing.JPanel();
+        makeOrderTitlePanel = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        orderPanel = new javax.swing.JTable();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        menuListPanel = new javax.swing.JTable();
+        menuListLabel = new javax.swing.JLabel();
+        orderLabel = new javax.swing.JLabel();
+        receiptBtn = new javax.swing.JButton();
+        addItemOrderBtn = new javax.swing.JButton();
+        deleteItemOrderBtn = new javax.swing.JButton();
+        totalTxtField = new javax.swing.JTextField();
+        quantityTxtField = new javax.swing.JTextField();
+        totalLabel = new javax.swing.JLabel();
+        quantityLabel = new javax.swing.JLabel();
+        noTxtField = new javax.swing.JTextField();
+        noLabel = new javax.swing.JLabel();
+        showOrderPanel = new javax.swing.JPanel();
+        showOrderTitle = new javax.swing.JPanel();
+        showOrderLabel = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        ordersPanel = new javax.swing.JTable();
         rmsTitlePanel = new javax.swing.JPanel();
         rmsTitleLabel = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -841,7 +865,7 @@ public class HomePage extends javax.swing.JFrame {
             .addGroup(editItemPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(editingTitlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                 .addGroup(editItemPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editMenuLabel)
                     .addComponent(editMenuID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -861,7 +885,7 @@ public class HomePage extends javax.swing.JFrame {
                     .addComponent(editCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(editBtn)
-                .addContainerGap(156, Short.MAX_VALUE))
+                .addContainerGap(155, Short.MAX_VALUE))
         );
 
         displayPanel.add(editItemPanel, "card3");
@@ -954,6 +978,297 @@ public class HomePage extends javax.swing.JFrame {
         );
 
         displayPanel.add(showInventoryPanel, "card4");
+
+        makeOrderTitlePanel.setBackground(new java.awt.Color(255, 255, 255));
+        makeOrderTitlePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 78, 34), 2));
+
+        jLabel14.setFont(new java.awt.Font("New Peninim MT", 1, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 78, 34));
+        jLabel14.setText("Make an Order");
+
+        javax.swing.GroupLayout makeOrderTitlePanelLayout = new javax.swing.GroupLayout(makeOrderTitlePanel);
+        makeOrderTitlePanel.setLayout(makeOrderTitlePanelLayout);
+        makeOrderTitlePanelLayout.setHorizontalGroup(
+            makeOrderTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeOrderTitlePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(198, 198, 198))
+        );
+        makeOrderTitlePanelLayout.setVerticalGroup(
+            makeOrderTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeOrderTitlePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel14)
+                .addGap(17, 17, 17))
+        );
+
+        orderPanel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "No:", "Item_name:", "Quantity:", "Price:"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        orderPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                orderPanelMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(orderPanel);
+        if (orderPanel.getColumnModel().getColumnCount() > 0) {
+            orderPanel.getColumnModel().getColumn(0).setResizable(false);
+            orderPanel.getColumnModel().getColumn(1).setResizable(false);
+            orderPanel.getColumnModel().getColumn(2).setResizable(false);
+            orderPanel.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        menuListPanel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Menu_ID:", "Item_name:", "Price:", "Category:"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        menuListPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuListPanelMouseClicked(evt);
+            }
+        });
+        jScrollPane8.setViewportView(menuListPanel);
+        if (menuListPanel.getColumnModel().getColumnCount() > 0) {
+            menuListPanel.getColumnModel().getColumn(0).setResizable(false);
+            menuListPanel.getColumnModel().getColumn(1).setResizable(false);
+            menuListPanel.getColumnModel().getColumn(2).setResizable(false);
+            menuListPanel.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        menuListLabel.setText("Menu List");
+
+        orderLabel.setText("Order");
+
+        receiptBtn.setText("Receipt");
+
+        addItemOrderBtn.setText("Add");
+        addItemOrderBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addItemOrderBtnActionPerformed(evt);
+            }
+        });
+
+        deleteItemOrderBtn.setText("Delete");
+
+        totalLabel.setText("Total: $");
+
+        quantityLabel.setText("Quantity:");
+
+        noLabel.setText("No:");
+
+        javax.swing.GroupLayout makeOrderPanelLayout = new javax.swing.GroupLayout(makeOrderPanel);
+        makeOrderPanel.setLayout(makeOrderPanelLayout);
+        makeOrderPanelLayout.setHorizontalGroup(
+            makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(makeOrderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(makeOrderTitlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeOrderPanelLayout.createSequentialGroup()
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+            .addGroup(makeOrderPanelLayout.createSequentialGroup()
+                .addGap(125, 125, 125)
+                .addComponent(menuListLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(orderLabel)
+                .addGap(139, 139, 139))
+            .addGroup(makeOrderPanelLayout.createSequentialGroup()
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(makeOrderPanelLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(addItemOrderBtn)
+                        .addGap(30, 30, 30)
+                        .addComponent(deleteItemOrderBtn))
+                    .addGroup(makeOrderPanelLayout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeOrderPanelLayout.createSequentialGroup()
+                                .addComponent(quantityLabel)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(makeOrderPanelLayout.createSequentialGroup()
+                                .addComponent(noLabel)
+                                .addGap(48, 48, 48)))
+                        .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(noTxtField, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                            .addComponent(quantityTxtField))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeOrderPanelLayout.createSequentialGroup()
+                        .addComponent(totalLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(totalTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(93, 93, 93))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, makeOrderPanelLayout.createSequentialGroup()
+                        .addComponent(receiptBtn)
+                        .addGap(118, 118, 118))))
+        );
+        makeOrderPanelLayout.setVerticalGroup(
+            makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(makeOrderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(makeOrderTitlePanel, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(menuListLabel)
+                    .addComponent(orderLabel))
+                .addGap(5, 5, 5)
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(noTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(noLabel))
+                .addGap(1, 1, 1)
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(quantityLabel)
+                    .addComponent(quantityTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(totalLabel)
+                    .addComponent(totalTxtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(makeOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteItemOrderBtn)
+                    .addComponent(addItemOrderBtn)
+                    .addComponent(receiptBtn))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        displayPanel.add(makeOrderPanel, "card6");
+
+        showOrderTitle.setBackground(new java.awt.Color(255, 255, 255));
+        showOrderTitle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 78, 34), 2));
+
+        showOrderLabel.setFont(new java.awt.Font("New Peninim MT", 1, 24)); // NOI18N
+        showOrderLabel.setForeground(new java.awt.Color(0, 78, 34));
+        showOrderLabel.setText("Show Orders");
+
+        javax.swing.GroupLayout showOrderTitleLayout = new javax.swing.GroupLayout(showOrderTitle);
+        showOrderTitle.setLayout(showOrderTitleLayout);
+        showOrderTitleLayout.setHorizontalGroup(
+            showOrderTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, showOrderTitleLayout.createSequentialGroup()
+                .addContainerGap(207, Short.MAX_VALUE)
+                .addComponent(showOrderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(198, 198, 198))
+        );
+        showOrderTitleLayout.setVerticalGroup(
+            showOrderTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, showOrderTitleLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(showOrderLabel)
+                .addGap(17, 17, 17))
+        );
+
+        ordersPanel.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "No:", "Item_name:", "Quantity:", "Price:"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        ordersPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ordersPanelMouseClicked(evt);
+            }
+        });
+        jScrollPane9.setViewportView(ordersPanel);
+        if (ordersPanel.getColumnModel().getColumnCount() > 0) {
+            ordersPanel.getColumnModel().getColumn(0).setResizable(false);
+            ordersPanel.getColumnModel().getColumn(1).setResizable(false);
+            ordersPanel.getColumnModel().getColumn(2).setResizable(false);
+            ordersPanel.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        javax.swing.GroupLayout showOrderPanelLayout = new javax.swing.GroupLayout(showOrderPanel);
+        showOrderPanel.setLayout(showOrderPanelLayout);
+        showOrderPanelLayout.setHorizontalGroup(
+            showOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(showOrderTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(showOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 601, Short.MAX_VALUE))
+        );
+        showOrderPanelLayout.setVerticalGroup(
+            showOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(showOrderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(showOrderTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(457, Short.MAX_VALUE))
+            .addGroup(showOrderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(showOrderPanelLayout.createSequentialGroup()
+                    .addGap(48, 48, 48)
+                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(33, Short.MAX_VALUE)))
+        );
+
+        displayPanel.add(showOrderPanel, "card7");
 
         rmsTitlePanel.setBackground(new java.awt.Color(94, 141, 103));
         rmsTitlePanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 78, 34), 2));
@@ -1124,10 +1439,75 @@ public class HomePage extends javax.swing.JFrame {
 
     private void make_order_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_make_order_btnActionPerformed
         // TODO add your handling code here:
+        displayPanel.removeAll();
+        displayPanel.repaint();
+        displayPanel.revalidate();
+        
+        displayPanel.add(makeOrderPanel);
+        displayPanel.repaint();
+        displayPanel.revalidate();
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo?", "root", "");
+            Statement stmt = conn.createStatement();
+            
+ 
+            ResultSet rs=stmt.executeQuery("Select * from menulist");
+            
+//            ResultSet rs1=stmt.executeQuery("Select * from orderlist");
+            
+            DefaultTableModel menuTableModel = (DefaultTableModel)menuListPanel.getModel();
+            menuTableModel.setRowCount(0);
+//            
+//            DefaultTableModel OrderTableModel = (DefaultTableModel)orderPanel.getModel();
+//            OrderTableModel.setRowCount(0);
+            
+            while(rs.next()){
+                //data will be added until the the bottom of the table is reached
+                Object table1[] = {rs.getInt("Menu_id"),rs.getString("Item_name"), rs.getDouble("Price"), rs.getString("Category")};
+                menuTableModel.addRow(table1);
+//                
+//                Object table2[] = {rs1.getInt("No"),rs1.getString("Item_name"), rs1.getDouble("Quantity"), rs1.getString("Price")};
+//                menuTableModel.addRow(table2);
+            }
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_make_order_btnActionPerformed
 
     private void show_orders_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_orders_btnActionPerformed
         // TODO add your handling code here:
+        //display all items in database
+        displayPanel.removeAll();
+        displayPanel.repaint();
+        displayPanel.revalidate();
+        
+        displayPanel.add(showOrderPanel);
+        displayPanel.repaint();
+        displayPanel.revalidate();
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo?", "root", "");
+            Statement stmt = conn.createStatement();
+            
+ 
+            ResultSet rs=stmt.executeQuery("Select * from orderlist");
+            DefaultTableModel menuTableModel = (DefaultTableModel)ordersPanel.getModel();
+            menuTableModel.setRowCount(0);
+            
+            while(rs.next()){
+                //data will be added until the the bottom of the table is reached
+                Object table1[] = {rs.getInt("No"),rs.getString("Item_name"), rs.getInt("Quantity"), rs.getDouble("Price")};
+                menuTableModel.addRow(table1);
+
+            }
+        }
+        catch (Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
     }//GEN-LAST:event_show_orders_btnActionPerformed
 
     private void show_inventory_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_show_inventory_btnActionPerformed
@@ -1251,10 +1631,9 @@ public class HomePage extends javax.swing.JFrame {
             editItemName.setText("");
             editPrice.setText("");
             editCategory.setText("");
-            
+     
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
-      
         }
      
     }//GEN-LAST:event_editBtnActionPerformed
@@ -1276,39 +1655,7 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_editMenuIDActionPerformed
 
     private void menuTabsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTabsMouseClicked
-        // TODO add your handling code here:
-        //        int menuchoice = 1;
-//        switch(menuchoice){
-//            case 1:
-//                menuTabsMouseClicked(menuPanel1);
-//                extension = "";
-//                table =menuTable1;
-//                menuTabs.setSelectedIndex(0);
-//                break;
-//            case 2:
-//                menuTabsMouseClicked(menuPanel2);
-//                extension = " where Category='Appetizer'";
-//                table =menuTable2;
-//                menuTabs.setSelectedIndex(1);
-//                break;
-// 
-//            case 3:
-//                menuTabsMouseClicked(menuPanel3);
-//                extension = " where Category='Main'";
-//                table =menuTable3;
-//                menuTabs.setSelectedIndex(2);
-//                break;
-//            case 4:
-//                menuTabsMouseClicked(menuPanel4);
-//                extension = " where Category='Dessert'";
-//                table =menuTable4;
-//                menuTabs.setSelectedIndex(3);
-//                break;
-//            case 5:
-//                menuTabsMouseClicked(menuPanel5);
-//                extension = " where Category='Beverages'";
-//                table =menuTable5;
-//       }
+
         displayPanel.removeAll();
         displayPanel.repaint();
         displayPanel.revalidate();
@@ -1322,24 +1669,24 @@ public class HomePage extends javax.swing.JFrame {
         if (menuTabsMouseClicked(menuPanel1)){
             extension = "";
             table =menuTable1;
-//            menuTabs.setSelectedComponent(menuPanel1);
+
             
-        }if(menuTabsMouseClicked(menuPanel2)){
+        }else if(menuTabsMouseClicked(menuPanel2)){
             extension = " where Category='Appetizer'";
             table =menuTable2;
-//            menuTabs.setSelectedComponent(menuPanel2);
+
             
-        }if (menuTabsMouseClicked(menuPanel3)){
+        }else if (menuTabsMouseClicked(menuPanel3)){
             extension = " where Category='Main'";
             table =menuTable3;
-//            menuTabs.setSelectedComponent(menuPanel3);
+
             
-        }if(menuTabsMouseClicked(menuPanel4)){
+        }else if(menuTabsMouseClicked(menuPanel4)){
             extension = " where Category='Dessert'";
             table =menuTable4;
           
             
-        }if(menuTabsMouseClicked(menuPanel5)){
+        }else if(menuTabsMouseClicked(menuPanel5)){
             extension = " where Category='Beverage'";
             table =menuTable5;
           
@@ -1402,6 +1749,76 @@ public class HomePage extends javax.swing.JFrame {
 
     }//GEN-LAST:event_menuTable1MouseClicked
 
+    private void orderPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderPanelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_orderPanelMouseClicked
+
+    private void menuListPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuListPanelMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel tblmodel2 = (DefaultTableModel)menuListPanel.getModel();
+        
+        
+        String Menu_id = tblmodel2.getValueAt(menuListPanel.getSelectedRow(), 0).toString();
+        String Item_name = tblmodel2.getValueAt(menuListPanel.getSelectedRow(), 1).toString();
+        String Price = tblmodel2.getValueAt(menuListPanel.getSelectedRow(), 2).toString();
+        String Category = tblmodel2.getValueAt(menuListPanel.getSelectedRow(), 3).toString();
+        
+//        editMenuID.setText(Menu_id);
+//        editItemName.setText(Item_name);
+//        editPrice.setText(Price);
+//        editCategory.setText(Category);
+    }//GEN-LAST:event_menuListPanelMouseClicked
+
+    private void addItemOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemOrderBtnActionPerformed
+        // TODO add your handling code here:
+//        String no = null;
+//        String item_name = null;
+//        String quantity = null;
+//        String price = null;
+//        
+//        DefaultTableModel tblModel = (DefaultTableModel)menuTable1.getModel();
+//        if (menuTable1.getSelectedRowCount() == 1){
+//            //if single row is selected store the values in variables
+//            no = noTxtField.getText();
+//            item_name = tblModel.getValueAt(menuTable1.getSelectedRow(),1).toString();
+//            quantity = quantityTxtField.getText();
+//            price = tblModel.getValueAt(menuTable1.getSelectedRow(),3).toString();
+//            
+//            
+//            //set updated value on table row
+//            tblModel.setValueAt(no, orderTable.getSelectedRow(), 0);
+//            tblModel.setValueAt(item_name, orderTable.getSelectedRow(), 1);
+//            tblModel.setValueAt(quantity, orderTable.getSelectedRow(), 2);
+//            tblModel.setValueAt(price, orderTable.getSelectedRow(), 3);
+//        
+//        try{
+//            Class.forName("com.mysql.jdbc.Driver");
+//            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo?", "root", "");
+//            Statement stmt = conn.createStatement();
+//            
+// 
+//            ResultSet rs=stmt.executeQuery("Insert into orderlist(No,Item_name,Quantity,Price)values(?,?,?,?)");
+//            DefaultTableModel menuTableModel = (DefaultTableModel)orderTable.getModel();
+//            menuTableModel.setRowCount(0);
+//            
+//            while(rs.next()){
+//                //data will be added until the the bottom of the table is reached
+//                Object table1[] = {rs.getInt("No"),rs.getString("Item_name"), rs.getInt("Quantity"), rs.getDouble("Price")};
+//                tblModel.addRow(table1);
+//
+//            }
+//            
+//        }catch(Exception e){
+//            JOptionPane.showMessageDialog(null, e);
+//        }
+//        
+//       }
+    }//GEN-LAST:event_addItemOrderBtnActionPerformed
+
+    private void ordersPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersPanelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ordersPanelMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1441,12 +1858,14 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTextField addCategory1;
     private javax.swing.JButton addItemBtn1;
     private javax.swing.JTextField addItemName1;
+    private javax.swing.JButton addItemOrderBtn;
     private javax.swing.JPanel addItemPanel;
     private javax.swing.JTextField addMenuID1;
     private javax.swing.JTextField addPrice1;
     private javax.swing.JButton add_item_btn;
     private javax.swing.JPanel addingTitlePanel1;
     private javax.swing.JPanel addingTitlePanel2;
+    private javax.swing.JButton deleteItemOrderBtn;
     private javax.swing.JButton delete_item_btn;
     private javax.swing.JPanel displayPanel;
     private javax.swing.JButton editBtn;
@@ -1464,6 +1883,7 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -1485,9 +1905,16 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JButton logoutBtn;
+    private javax.swing.JPanel makeOrderPanel;
+    private javax.swing.JPanel makeOrderTitlePanel;
     private javax.swing.JButton make_order_btn;
+    private javax.swing.JLabel menuListLabel;
+    private javax.swing.JTable menuListPanel;
     private javax.swing.JPanel menuPanel1;
     private javax.swing.JPanel menuPanel2;
     private javax.swing.JPanel menuPanel3;
@@ -1499,14 +1926,27 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTable menuTable4;
     private javax.swing.JTable menuTable5;
     private javax.swing.JTabbedPane menuTabs;
+    private javax.swing.JLabel noLabel;
+    private javax.swing.JTextField noTxtField;
+    private javax.swing.JLabel orderLabel;
+    private javax.swing.JTable orderPanel;
+    private javax.swing.JTable ordersPanel;
+    private javax.swing.JLabel quantityLabel;
+    private javax.swing.JTextField quantityTxtField;
+    private javax.swing.JButton receiptBtn;
     private javax.swing.JLabel rightIcon;
     private javax.swing.JLabel rmsTitleLabel;
     private javax.swing.JPanel rmsTitlePanel;
     private javax.swing.JPanel showInventoryPanel;
     private javax.swing.JTable showInventoryTable;
+    private javax.swing.JLabel showOrderLabel;
+    private javax.swing.JPanel showOrderPanel;
+    private javax.swing.JPanel showOrderTitle;
     private javax.swing.JButton show_inventory_btn;
     private javax.swing.JButton show_menu_btn;
     private javax.swing.JButton show_orders_btn;
+    private javax.swing.JLabel totalLabel;
+    private javax.swing.JTextField totalTxtField;
     // End of variables declaration//GEN-END:variables
 
     private Boolean menuTabsMouseClicked(JPanel menuPanel2) {
