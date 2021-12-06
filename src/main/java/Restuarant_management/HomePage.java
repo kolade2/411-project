@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
+
 /**
  *
  * @author koladeadegbaye
@@ -1770,49 +1771,34 @@ public class HomePage extends javax.swing.JFrame {
     }//GEN-LAST:event_menuListPanelMouseClicked
 
     private void addItemOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addItemOrderBtnActionPerformed
-        // TODO add your handling code here:
-//        String no = null;
-//        String item_name = null;
-//        String quantity = null;
-//        String price = null;
-//        
-//        DefaultTableModel tblModel = (DefaultTableModel)menuTable1.getModel();
-//        if (menuTable1.getSelectedRowCount() == 1){
-//            //if single row is selected store the values in variables
-//            no = noTxtField.getText();
-//            item_name = tblModel.getValueAt(menuTable1.getSelectedRow(),1).toString();
-//            quantity = quantityTxtField.getText();
-//            price = tblModel.getValueAt(menuTable1.getSelectedRow(),3).toString();
-//            
-//            
-//            //set updated value on table row
-//            tblModel.setValueAt(no, orderTable.getSelectedRow(), 0);
-//            tblModel.setValueAt(item_name, orderTable.getSelectedRow(), 1);
-//            tblModel.setValueAt(quantity, orderTable.getSelectedRow(), 2);
-//            tblModel.setValueAt(price, orderTable.getSelectedRow(), 3);
-//        
-//        try{
-//            Class.forName("com.mysql.jdbc.Driver");
-//            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo?", "root", "");
-//            Statement stmt = conn.createStatement();
-//            
-// 
-//            ResultSet rs=stmt.executeQuery("Insert into orderlist(No,Item_name,Quantity,Price)values(?,?,?,?)");
-//            DefaultTableModel menuTableModel = (DefaultTableModel)orderTable.getModel();
-//            menuTableModel.setRowCount(0);
-//            
-//            while(rs.next()){
-//                //data will be added until the the bottom of the table is reached
-//                Object table1[] = {rs.getInt("No"),rs.getString("Item_name"), rs.getInt("Quantity"), rs.getDouble("Price")};
-//                tblModel.addRow(table1);
-//
-//            }
-//            
-//        }catch(Exception e){
-//            JOptionPane.showMessageDialog(null, e);
-//        }
-//        
-//       }
+
+        String no = null;
+        String item_name = null;
+        String quantity = null;
+        String price = null;
+        int index = menuListPanel.getSelectedRow();
+        
+        TableModel model1 = menuListPanel.getModel();
+    
+        no = noTxtField.getText();
+        item_name = model1.getValueAt(index, 1).toString();
+        quantity = quantityTxtField.getText();
+        price = model1.getValueAt(index, 2).toString();
+        
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn= DriverManager.getConnection("jdbc:mysql://localhost:3306/logininfo?", "root", "");
+            PreparedStatement rs=conn.prepareStatement("Insert into orderlist (No,Item_name,Quantity,Price)values(?,?,?,?)");
+            rs.setString(1, no);
+            rs.setString(2, item_name);
+            rs.setString(3, quantity);
+            rs.setString(4, price);
+            rs.executeUpdate();
+             
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
     }//GEN-LAST:event_addItemOrderBtnActionPerformed
 
     private void ordersPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ordersPanelMouseClicked
