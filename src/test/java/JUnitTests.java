@@ -36,23 +36,19 @@ public class JUnitTests {
     public void tearDown() throws Exception {
     }
     
-
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
-    @Test
      public void test(){  
-        System.out.println("This test will alwauys pass");
+        System.out.println("This test will always pass");
     }  
     
     @Test
     public void testUsernameLoginPage() {
         RestuarantManagement rm = new RestuarantManagement();
-        assertAll("address name",
-        () -> assertEquals("John", rm.getUsername()),
-        () -> assertEquals("User", rm.getPassword())
-     );
+        assertEquals("Kolade", rm.getUsername());
+    }
+    
+    @Test
+    public void testPasswordLoginPage() {
+        RestuarantManagement rm = new RestuarantManagement();
+        assertEquals("1234", rm.getPassword());
     }
 }
