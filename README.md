@@ -1,7 +1,6 @@
 # 411-project
-course project for software engineering class
-# creators and collaborators
-- Maria Orantes, Sylvia Yan, Simon Pan, Selin Aslangul, Kolade Adegbaye
+Course project for Software Engineering class
+# Creators : Maria Orantes, Sylvia Yan, Simon Pan, Selin Aslangul, Kolade Adegbaye
 
 # Restuarant Management System (RMS) 
 
@@ -17,7 +16,7 @@ course project for software engineering class
 - set up tables with client parameters
 
 ## Login
--create logintable in database to store login information
+- Create logintable in database to store login information
 
 ## Test Manager
 - Username: Kolade Password: 1234
@@ -31,7 +30,7 @@ You can see all menu items by clicking the show menu button to display menu item
 4. Click "Desserts" menu tab to view dessert items
 5. Click "Beverages" menu tab to view beverage items
 
-### add menu item
+### Add menu item
 1. Click add item button
 2. Input information for the item to be added
 3. Click add new item button
@@ -43,19 +42,19 @@ You can see all menu items by clicking the show menu button to display menu item
 2. Enter quantity information and order id to match customers id
 3. Click ok
 
-### delete order
+### Delete order
 1. Select order item from menulist display
 2. Click yes or no to confirm delete
 
-### show orders
+### Show orders
 - Click show order button to view orders
 
 ## Inventory management
 - Click show inventory button to view inventory items
 
-### request inventory 
+### Request inventory 
 - Click request inventory button
 
-### logout
+### Logout
 - Click logout button to log out of system
 
