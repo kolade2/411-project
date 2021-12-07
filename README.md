@@ -1,11 +1,10 @@
 # 411-project
 Course project for Software Engineering class
+# Restuarant Management System (RMS) 
 ## Creators : Maria Orantes, Sylvia Yan, Simon Pan, Selin Aslangul, Kolade Adegbaye
 
-# Restuarant Management System (RMS) 
-
 ## Execute
-## Download to run
+### Download to run
 - download Xampp server (https://www.apachefriends.org/download.html)
 - run xampp and apache server in xampp application
 - download mySql java connector 8.0.27 (https://dev.mysql.com/downloads/connector/j/)
