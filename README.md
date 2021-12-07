@@ -1,9 +1,9 @@
 # 411-project
 course project for software engineering class
 # creators and collaborators
-- Maria Orantes, Kolade Adegbaye, Sylvia Yan, Simon Pan, and Selin Aslangul
+- Maria Orantes, Sylvia Yan, Simon Pan, Selin Aslangul, Kolade Adegbaye
 
-# Resutaurant Management System (RMS) 
+# Restuarant Management System (RMS) 
 
 ## Execute
 ## Download to run
@@ -19,43 +19,43 @@ course project for software engineering class
 ## Login
 -create logintable in database to store login information
 
-### Test Manager
-- username: Kolade Password: 1234
+## Test Manager
+- Username: Kolade Password: 1234
 
-### Menu management
-## Show menu
+## Menu management
+### Show menu
 You can see all menu items by clicking the show menu button to display menu items
-1. click "Full menu" tab to view full menu
-2. click "Appetizer" menu tab to view appetizers
-3. click "Main" menu tab to view main items
-4. click "Deserts" menu tab to view dessert items
-5. click "Beverages" menu tab to view beverage items
+1. Click "Full menu" tab to view full menu
+2. Click "Appetizer" menu tab to view appetizer items
+3. Click "Main" menu tab to view main items
+4. Click "Desserts" menu tab to view dessert items
+5. Click "Beverages" menu tab to view beverage items
 
-## add menu item
-1. click add item button
-2. input information for the item to be added
-3. click add new item button
+### add menu item
+1. Click add item button
+2. Input information for the item to be added
+3. Click add new item button
 
 
-### Order management
-## Add order
+## Order management
+### Add order
 1. select order item from menulist display
-2. enter quantity information and order id to match customers id
-3. click ok
+2. Enter quantity information and order id to match customers id
+3. Click ok
 
-## delete order
-1. select order item from menulist display
-2. click yes or no to confirm delete
+### delete order
+1. Select order item from menulist display
+2. Click yes or no to confirm delete
 
-## show orders
-1. click show order button to view orders
+### show orders
+- Click show order button to view orders
 
-### Inventory management
-1. click show inventory button to view inventory items
+## Inventory management
+- Click show inventory button to view inventory items
 
-## request inventory 
-1. click request inventory button
+### request inventory 
+- Click request inventory button
 
 ### logout
-- click logout button to log out of system
+- Click logout button to log out of system
 
