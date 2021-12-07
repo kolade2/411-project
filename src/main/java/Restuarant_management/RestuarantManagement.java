@@ -38,7 +38,7 @@ public class RestuarantManagement extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         rmsTitleLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        loginBtn = new javax.swing.JButton();
         username = new javax.swing.JTextField();
         password = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -74,12 +74,12 @@ public class RestuarantManagement extends javax.swing.JFrame {
                 .addGap(0, 58, Short.MAX_VALUE))
         );
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setForeground(new java.awt.Color(51, 255, 0));
-        jButton1.setText("Login");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        loginBtn.setBackground(new java.awt.Color(255, 255, 255));
+        loginBtn.setForeground(new java.awt.Color(51, 255, 0));
+        loginBtn.setText("Login");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginBtnActionPerformed(evt);
             }
         });
 
@@ -127,7 +127,7 @@ public class RestuarantManagement extends javax.swing.JFrame {
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(loginBtn)
                 .addGap(355, 355, 355))
         );
         layout.setVerticalGroup(
@@ -146,14 +146,14 @@ public class RestuarantManagement extends javax.swing.JFrame {
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(loginBtn)
                 .addContainerGap(175, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
         //varibales to store the information passed into the username and password text box
         var user=username.getText();
@@ -172,7 +172,7 @@ public class RestuarantManagement extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Welcome user");
                 //log the user in and remove the current log in screen
                 this.dispose();
-                //calls the homepage ob
+                //calls the homepage object that opens up another window
                 HomePage w=new HomePage();
                 w.setVisible(true);
                 w.pack();
@@ -181,8 +181,11 @@ public class RestuarantManagement extends javax.swing.JFrame {
                
                
             }
+            //if the result set doesnt produce anything then the user name and password is not in tbe database
             else{
+                //display window that says an invalid username and password
                 JOptionPane.showMessageDialog(null, "invalid username or password", "Access Denied", JOptionPane.ERROR_MESSAGE);
+                //sets the username and password text fields to be empty so the user can try again
                 username.setText("");
                 password.setText("");
             }
@@ -191,8 +194,15 @@ public class RestuarantManagement extends javax.swing.JFrame {
 //            JOptionPane.showMessageDialog(null, e);
         }
 
-    }//GEN-LAST:event_jButton1ActionPerformed
-
+    }//GEN-LAST:event_loginBtnActionPerformed
+    
+    public String getUsername(){
+       return this.username.getText();
+    }
+    public String getPassword(){
+       return this.username.getText();
+    }
+    
     private void passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_passwordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_passwordActionPerformed
@@ -232,17 +242,18 @@ public class RestuarantManagement extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+                //runs the restuarant management object on run
                 new RestuarantManagement().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton loginBtn;
     private javax.swing.JTextField password;
     private javax.swing.JLabel rmsTitleLabel1;
     private javax.swing.JTextField username;
