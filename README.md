@@ -1,6 +1,6 @@
 # 411-project
 Course project for Software Engineering class
-# Creators : Maria Orantes, Sylvia Yan, Simon Pan, Selin Aslangul, Kolade Adegbaye
+## Creators : Maria Orantes, Sylvia Yan, Simon Pan, Selin Aslangul, Kolade Adegbaye
 
 # Restuarant Management System (RMS) 
 
