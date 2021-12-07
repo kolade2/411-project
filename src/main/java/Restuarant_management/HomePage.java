@@ -105,6 +105,8 @@ public class HomePage extends javax.swing.JFrame {
         jLabel20 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         showInventoryTable = new javax.swing.JTable();
+        restockLabel = new javax.swing.JLabel();
+        restockBtn = new javax.swing.JButton();
         makeOrderPanel = new javax.swing.JPanel();
         makeOrderTitlePanel = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
@@ -501,7 +503,7 @@ public class HomePage extends javax.swing.JFrame {
                 .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuPanel1Layout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
+                .addContainerGap(73, Short.MAX_VALUE)
                 .addComponent(add_item_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addComponent(edit_item_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -569,14 +571,14 @@ public class HomePage extends javax.swing.JFrame {
             menuPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel2Layout.setVerticalGroup(
             menuPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel2Layout.createSequentialGroup()
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 435, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 19, Short.MAX_VALUE))
+                .addGap(0, 20, Short.MAX_VALUE))
         );
 
         menuTabs.addTab("Appetizer", menuPanel2);
@@ -626,7 +628,7 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel3Layout.setHorizontalGroup(
             menuPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel3Layout.setVerticalGroup(
@@ -677,7 +679,7 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel4Layout.setHorizontalGroup(
             menuPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel4Layout.setVerticalGroup(
@@ -728,7 +730,7 @@ public class HomePage extends javax.swing.JFrame {
         menuPanel5Layout.setHorizontalGroup(
             menuPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanel5Layout.createSequentialGroup()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 573, Short.MAX_VALUE)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE)
                 .addContainerGap())
         );
         menuPanel5Layout.setVerticalGroup(
@@ -894,7 +896,7 @@ public class HomePage extends javax.swing.JFrame {
         addingTitlePanel2Layout.setHorizontalGroup(
             addingTitlePanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addingTitlePanel2Layout.createSequentialGroup()
-                .addContainerGap(195, Short.MAX_VALUE)
+                .addContainerGap(194, Short.MAX_VALUE)
                 .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(198, 198, 198))
         );
@@ -933,6 +935,15 @@ public class HomePage extends javax.swing.JFrame {
             showInventoryTable.getColumnModel().getColumn(3).setResizable(false);
         }
 
+        restockLabel.setText("Rename of Inventory Items:");
+
+        restockBtn.setText("Request for Restock");
+        restockBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                restockBtnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout showInventoryPanelLayout = new javax.swing.GroupLayout(showInventoryPanel);
         showInventoryPanel.setLayout(showInventoryPanelLayout);
         showInventoryPanelLayout.setHorizontalGroup(
@@ -943,13 +954,22 @@ public class HomePage extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(addingTitlePanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(showInventoryPanelLayout.createSequentialGroup()
-                        .addGap(235, 235, 235)
-                        .addComponent(jLabel17)
-                        .addGap(0, 360, Short.MAX_VALUE))
-                    .addGroup(showInventoryPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane6)))
+                        .addComponent(jScrollPane6))
+                    .addGroup(showInventoryPanelLayout.createSequentialGroup()
+                        .addGroup(showInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(showInventoryPanelLayout.createSequentialGroup()
+                                .addGap(235, 235, 235)
+                                .addComponent(jLabel17))
+                            .addGroup(showInventoryPanelLayout.createSequentialGroup()
+                                .addGap(213, 213, 213)
+                                .addComponent(restockLabel)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(showInventoryPanelLayout.createSequentialGroup()
+                .addGap(222, 222, 222)
+                .addComponent(restockBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         showInventoryPanelLayout.setVerticalGroup(
             showInventoryPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -959,8 +979,12 @@ public class HomePage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel17)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(restockLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(restockBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
         );
 
         displayPanel.add(showInventoryPanel, "card4");
@@ -1792,6 +1816,11 @@ public class HomePage extends javax.swing.JFrame {
         
     }//GEN-LAST:event_deleteItemOrderBtnActionPerformed
 
+    private void restockBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_restockBtnActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(this,"Restock request sent!");
+    }//GEN-LAST:event_restockBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1905,6 +1934,8 @@ public class HomePage extends javax.swing.JFrame {
     private javax.swing.JTable ordersPanel;
     private javax.swing.JLabel quantityLabel;
     private javax.swing.JTextField quantityTxtField;
+    private javax.swing.JButton restockBtn;
+    private javax.swing.JLabel restockLabel;
     private javax.swing.JLabel rightIcon;
     private javax.swing.JLabel rmsTitleLabel;
     private javax.swing.JPanel rmsTitlePanel;
